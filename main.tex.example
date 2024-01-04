@@ -1,0 +1,20 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+% define all the needed variable like it is shown in the var.tex.example and load your file here
+\input{var.tex}
+
+% load the template headers
+\input{\templatePath/summary_headers.tex}
+
+\begin{document}
+\begin{multicols*}{3}
+
+% create the title section
+\input{\templatePath/summary_title.tex}
+
+% ---------------------------------------------------------------
+%                     your content goes here
+% ---------------------------------------------------------------
+
+\end{multicols*}
+\end{document}

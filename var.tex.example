@@ -1,3 +1,7 @@
+% specify the relative path from the main file to the folder that contains the template repo
+\newcommand{\templatePath}{template}
+
+% define some informations about this summary
 \newcommand{\summaryTitle}{Analysis III}
 \newcommand{\summarySubTitle}{HS23 ETHZ}
 \newcommand{\summaryAuthor}{Juri Pfammatter, Daniel Schweizer and Tobias Meier}

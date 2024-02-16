@@ -7,7 +7,8 @@
         "*.synctex.gz",
         "*.out",
         "*.log",
-        "*.fdb_latexmk"
+        "*.fdb_latexmk",
+        "*.ptc"
     ],
     "latex-workshop.latex.autoClean.run": "onBuilt",
     "latex-workshop.latex.clean.method": "glob",

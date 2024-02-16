@@ -1,5 +1,25 @@
 {
-    "latex-workshop.latex.outDir": "build",
-    "latex-workshop.linting.chktex.enabled": true, 
-    "latex-workshop.linting.chktex.exec.args": ["-wall","-n8","-n21","-n22","-n30","-n46","-e16","-q"],
+    "latex-workshop.latex.outDir": "../build",
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.fls",
+        "*.synctex.gz",
+        "*.out",
+        "*.log",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.chktex.exec.args": [
+        "-wall",
+        "-n8",
+        "-n21",
+        "-n22",
+        "-n30",
+        "-n46",
+        "-e16",
+        "-q"
+    ],
 }

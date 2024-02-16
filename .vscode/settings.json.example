@@ -1,0 +1,5 @@
+{
+    "latex-workshop.latex.outDir": "build",
+    "latex-workshop.linting.chktex.enabled": true, 
+    "latex-workshop.linting.chktex.exec.args": ["-wall","-n8","-n21","-n22","-n30","-n46","-e16","-q"],
+}

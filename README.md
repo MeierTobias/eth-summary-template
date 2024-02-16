@@ -38,7 +38,7 @@ This adds the template repo to the folder `src/template`
 Navigate to the subfolder that contains this repository `src/template` there you find a folder called `example`. Copy the two files `main.tex` and `var.tex` to the `src` folder. This can also be done by executing the following command:
 
 ``` bash
-cp src/template/eth-summary-template/example/* src
+cp src/template/example/* src
 ```
 
 Open the newly copied `var.tex` file in your `src` directory and adjust the parameters (values in the left most curly braces) to your needs.

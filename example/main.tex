@@ -1,20 +1,88 @@
-\documentclass[a4paper,10pt,landscape]{article}
-
-% define all the needed variable like it is shown in the var.tex.example and load your file here
+% Define all the needed variable like it is shown in the var.tex.example 
+% (Just copy the var.tex.example file and remove the ".example" from the filename.)
 \input{var.tex}
 
+\documentclass[\papersize,\fontheight,\orientationmode]{article}
+
 % load the template headers
-\input{\templatePath/summary_headers.tex}
+\input{\templatePath/summary_headers.tex} % ChkTex 27
 
 \begin{document}
 \begin{multicols*}{3}
 
-% create the title section
-\input{\templatePath/summary_title.tex}
+    % create the title section
+    \input{\templatePath/summary_title.tex} % ChkTex 27
 
-% ---------------------------------------------------------------
-%                     your content goes here
-% ---------------------------------------------------------------
+    % ---------------------------------------------------------------
+    %                     your content goes here
+    % ---------------------------------------------------------------
+
+    % These are some example sections
+    \section{Section}
+    You can structure your summary with the following four section types.
+    \begin{itemize}
+        \item \texttt{\symbol{92}section}
+        \item \texttt{\symbol{92}subsection}
+        \item \texttt{\symbol{92}subsubsection}
+        \item \texttt{\symbol{92}paragraph}
+    \end{itemize}
+
+    \subsection{Sub-Section}
+    This is a sub-section.
+
+    \subsubsection{Sub-Sub-Section}
+    This is a sub-sub-section.
+
+    \paragraph{Paragraph}
+    And this is a paragraph.
+
+    \section{Math examples}
+
+    Use either \texttt{equation}, \texttt{align} or \texttt{gather} to
+    state mathematical formulations.
+
+    \subsection{Single equation}
+    The \textit{D'Alembert} solution for a 1D Wave-PDE is given by:
+    \begin{equation*}
+        u(x,t)=\frac{1}{2}\left[f(x+ct)+f(x-ct)\right]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(s)ds
+    \end{equation*}
+
+    \subsection{Multiline equation}
+    Simple multiline equation can be written with the \texttt{gather} environment.
+
+    \begin{gather*}
+        u(x,t) =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2 A(t)} \\
+        A(t)=\int a(s)\;ds
+    \end{gather*}
+
+    To get aligned equations sue the \texttt{align} environment.
+    \begin{align*}
+        u(t-a)       \; & \laplace\; \frac{1}{s}e^{-as} \\
+        f(t-a)u(t-a) \; & \laplace\; e^{-as}F(s)
+    \end{align*}
+
+    \textbf{Hint:} \LaTeX{} is very strict about equations at the beginning of a section.
+    If you add an \texttt{align} environment at the start of an section use the
+    \textbackslash{}\texttt{noindent} command before the equation to suppress the unnecessary
+    line break.
+
+    \section{Section TOC}
+    This template provides a command to generate a section specific TOC.
+    \createsectiontoc{}
+
+    \subsection{First level of mini TOC}
+    \subsubsection{Second level of mini TOC}
+    \paragraph{Third level of mini TOC}
+
+    % TODO: Add code examples
+
+    \newcol{}
+
+    \section{Section in next column}
+
+    % ---------------------------------------------------------------
+    %                     your content eds here
+    % ---------------------------------------------------------------
 
 \end{multicols*}
 \end{document}

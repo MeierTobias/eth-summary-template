@@ -1,8 +1,10 @@
 # ignore vs-code settings
-.vscode/
+.vscode/*
+!.vscode/settings.json.example
 
 # ignore the latex build
 build/
 
 # ignore latexindent log
 src/indent.log
+example/indent.log

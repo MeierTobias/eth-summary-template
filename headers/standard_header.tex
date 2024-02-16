@@ -1,5 +1,5 @@
 % document setup
-\usepackage[left=7mm,right=7mm,top=15mm,bottom=7mm,landscape]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
+\usepackage[left=7mm,right=7mm,top=20mm,bottom=0mm,landscape]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
 \usepackage{multicol,multirow}
 \usepackage[utf8]{inputenc} % not strictly necessary, but sets utf8
 
@@ -40,21 +40,13 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 
-% Example section environment
-\newenvironment{examplesection}[1][]
-    {
-        \subsubsection{#1}
-        \color{blue}
-    }
-    {
-    }
-
 % define header style
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
 \ihead{\summaryTitle{} - \today}
 \chead{\pagemark}
 \ohead{\url{\repoURL}}
+\setlength{\headsep}{5pt}
 
 % hyperlinks have to be included last
 \usepackage{hyperref}
@@ -66,3 +58,10 @@
     urlcolor=black,
     pdftitle={\summaryTitle{}}
 }
+
+% set the section numbering down to the paragraph level
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% column separation
+\providecommand{\newcol}{\vfill\null\columnbreak}

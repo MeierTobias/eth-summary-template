@@ -4,7 +4,7 @@
 
 This repository contains the LaTeX summary template which can be used as a submodule or as a starting point for your lecture summary.
 
-[Example.pdf](https://meiertobias.github.io/eth-summarytemplate3/main.pdf)
+[Example.pdf](https://meiertobias.github.io/eth-summary-template/main.pdf)
 
 Topics documented in this ReadMe:
 
@@ -35,7 +35,11 @@ This adds the template repo to the folder `src/template`
 
 ### LaTeX setup
 
-Navigate to the subfolder that contains this repository `src/template` there you find a folder called `example`. Copy the two files `main.tex` and `var.tex` to the `src` folder. This can also be done by executing the following command: `cp src/template/eth-summary-template/example/* src`
+Navigate to the subfolder that contains this repository `src/template` there you find a folder called `example`. Copy the two files `main.tex` and `var.tex` to the `src` folder. This can also be done by executing the following command:
+
+``` bash
+cp src/template/example/* src
+```
 
 Open the newly copied `var.tex` file in your `src` directory and adjust the parameters (values in the left most curly braces) to your needs.
 

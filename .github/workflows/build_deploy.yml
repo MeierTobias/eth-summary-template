@@ -30,7 +30,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: change template path
         run: sed '0,/{template}/s//{..}/' -i example/var.tex ;
-      - uses: actions/checkout@v3
       - name: build latex pdf (portrait/with examples)
         uses: docker://texlive/texlive:latest
         with:

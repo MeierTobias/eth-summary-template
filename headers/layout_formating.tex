@@ -100,13 +100,22 @@
 }
 % Removes the page numbering from the sub- and subsub-section
 \titlecontents{subsection}[0.2em]{}{\thecontentslabel\hspace{1em}}{}{}[]
-\titlecontents{subsubsection}[3em]{}{\thecontentslabel\hspace{1em}}{}{}[]
-\titlecontents{paragraph}[6em]{}{\thecontentslabel\hspace{1em}}{}{}[]
+\titlecontents{subsubsection}[2.6em]{}{\thecontentslabel\hspace{1em}}{}{}[]
+\titlecontents{paragraph}[5.7em]{}{\thecontentslabel\hspace{1em}}{}{}[]
 
 % set the spacing above and below the equations
 \newlength{\eqSkipSize}  \setlength{\eqSkipSize}{6pt}
 \AtBeginDocument{%
   \setlength\abovedisplayskip{\eqSkipSize}%
   \setlength\belowdisplayskip{\eqSkipSize}%
-  \setlength\abovedisplayshortskip{\eqSkipSize}%
+  \setlength\abovedisplayshortskip{\eqSkipSize-\baselineskip}%
   \setlength\belowdisplayshortskip{\eqSkipSize}}
+
+% Example section environment
+\newenvironment{examplesection}[1][]
+{
+  \subsubsection{#1}
+  \color{blue}
+}
+{
+}

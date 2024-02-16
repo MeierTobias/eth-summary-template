@@ -6,3 +6,4 @@ build/
 
 # ignore latexindent log
 src/indent.log
+example/indent.log

@@ -40,15 +40,6 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 
-% Example section environment
-\newenvironment{examplesection}[1][]
-    {
-        \subsubsection{#1}
-        \color{blue}
-    }
-    {
-    }
-
 % define header style
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
@@ -70,3 +61,7 @@
 
 % set the section numbering down to the paragraph level
 \setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% column separation
+\providecommand{\newcol}{\vfill\null\columnbreak}

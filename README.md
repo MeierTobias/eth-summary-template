@@ -4,7 +4,7 @@
 
 This repository contains the LaTeX summary template which can be used as a submodule or as a starting point for your lecture summary.
 
-[Example.pdf](https://meiertobias.github.io/eth-summarytemplate3/main.pdf)
+[Example.pdf](https://meiertobias.github.io/eth-summary-template/main.pdf)
 
 Topics documented in this ReadMe:
 

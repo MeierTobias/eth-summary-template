@@ -6,6 +6,33 @@
 \definecolor{paragraphColor}{HTML}{87a9e8}
 \definecolor{titleTextColor}{RGB}{255,255,255}
 
+% multicol settings
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{5pt}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+% define header style
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\ihead{\summaryTitle{} - \today}
+\chead{\pagemark}
+\ohead{\url{\repoURL}}
+\setlength{\headsep}{5pt}
+
+% hyperlinks have to be included last
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    pdftitle={\summaryTitle{}}
+}
+
 % set the size of a section
 \usepackage{parskip}
 \setlength{\parindent}{0pt}
@@ -102,14 +129,6 @@
 \titlecontents{subsection}[0.2em]{}{\thecontentslabel\hspace{1em}}{}{}[]
 \titlecontents{subsubsection}[2.6em]{}{\thecontentslabel\hspace{1em}}{}{}[]
 \titlecontents{paragraph}[5.7em]{}{\thecontentslabel\hspace{1em}}{}{}[]
-
-% set the spacing above and below the equations
-\newlength{\eqSkipSize}  \setlength{\eqSkipSize}{6pt}
-\AtBeginDocument{%
-  \setlength\abovedisplayskip{\eqSkipSize}%
-  \setlength\belowdisplayskip{\eqSkipSize}%
-  \setlength\abovedisplayshortskip{\eqSkipSize-\baselineskip}%
-  \setlength\belowdisplayshortskip{\eqSkipSize}}
 
 % Example section environment
 \newenvironment{examplesection}[1][]

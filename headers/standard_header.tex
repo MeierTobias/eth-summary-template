@@ -1,21 +1,13 @@
 % document setup
-\usepackage[left=7mm,right=7mm,top=20mm,bottom=0mm,\orientationmode]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
+\usepackage[left=7mm,right=7mm,top=20mm,bottom=0mm,\orientationmode]{geometry}
 \usepackage{multicol,multirow}
 \usepackage[utf8]{inputenc} % not strictly necessary, but sets utf8
 
 % enable colors
 \usepackage{xcolor,color} % standard colors (blue, red, etc.https://www.namsu.de/Extra/pakete/Xcolor.html )
 
-% multicol settings
-\setlength{\premulticols}{1pt}
-\setlength{\postmulticols}{1pt}
-\setlength{\multicolsep}{1pt}
-\setlength{\columnsep}{5pt}
-\setlength{\columnseprule}{1pt}
-\def\columnseprulecolor{\color{black}}
-
 % language
-\usepackage[english]{babel} %choose your language
+\usepackage[english]{babel}
 
 % for images
 \usepackage{graphicx}
@@ -23,9 +15,6 @@
 
 % Images combined with texts
 \usepackage{wrapfig}
-
-% some AsmTeX options
-\usepackage{amscd, amsmath,amssymb}
 
 % more fine control for lists
 \usepackage{enumitem}
@@ -39,25 +28,6 @@
 % table that supports equations
 \usepackage{tabularx}
 \usepackage{booktabs}
-
-% define header style
-\usepackage[headsepline]{scrlayer-scrpage}
-\pagestyle{scrheadings}
-\ihead{\summaryTitle{} - \today}
-\chead{\pagemark}
-\ohead{\url{\repoURL}}
-\setlength{\headsep}{5pt}
-
-% hyperlinks have to be included last
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=blue,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black,
-    pdftitle={\summaryTitle{}}
-}
 
 % set the section numbering down to the paragraph level
 \setcounter{secnumdepth}{4}

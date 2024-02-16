@@ -1,17 +1,17 @@
-\documentclass[a4paper,10pt,landscape]{article}
-
 % Define all the needed variable like it is shown in the var.tex.example 
 % (Just copy the var.tex.example file and remove the ".example" from the filename.)
 \input{var.tex}
 
+\documentclass[\papersize,\fontheight,\orientationmode]{article}
+
 % load the template headers
-\input{\templatePath/summary_headers.tex}
+\input{\templatePath/summary_headers.tex} % ChkTex 27
 
 \begin{document}
 \begin{multicols*}{3}
 
     % create the title section
-    \input{\templatePath/summary_title.tex}
+    \input{\templatePath/summary_title.tex} % ChkTex 27
 
     % ---------------------------------------------------------------
     %                     your content goes here
@@ -61,9 +61,9 @@
         f(t-a)u(t-a) \; & \laplace\; e^{-as}F(s)
     \end{align*}
 
-    \textbf{Hint:} \LaTeX{} is very strict about equations at the beginning of a section. 
-    If you add an \texttt{align} environment at the start of an section use the 
-    \textbackslash{}\texttt{noindent} command before the equation to suppress the unnecessary 
+    \textbf{Hint:} \LaTeX{} is very strict about equations at the beginning of a section.
+    If you add an \texttt{align} environment at the start of an section use the
+    \textbackslash{}\texttt{noindent} command before the equation to suppress the unnecessary
     line break.
 
     \section{Section TOC}

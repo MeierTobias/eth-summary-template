@@ -1,0 +1,50 @@
+\usepackage{xcolor}
+%bright
+\definecolor{backcolor_bright_print}{RGB}{240, 238, 240}
+\definecolor{comment_bright}{RGB}{100, 100, 100}
+\definecolor{string_bright}{RGB}{17, 156, 89}
+\definecolor{datatype_bright}{RGB}{0,123,230}
+\definecolor{keyword_bright}{RGB}{184, 44, 70}
+\definecolor{ident_bright}{RGB}{32,8,110}
+
+% use \code{codeline} for inline code 
+\newcommand{\code}[1]{{\normalsize\texttt{#1}}}
+\newcommand{\fncode}[1]{{\footnotesize\texttt{#1}}}
+
+% use listing for code blocks
+\usepackage{listings}
+
+% custom style
+\lstdefinestyle{bright_C++}{
+    language=C++,
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{backcolor_bright_print},   
+    commentstyle=\color{comment_bright},
+    stringstyle=\color{string_bright},
+    identifierstyle=\color{ident_bright},
+    keywords={asm, auto, bool, break, case, catch, const, constexpr, const_cast, continue, decltype, default, delete, do, dynamic_cast, else, enum, explicit, export, extern, false, for, friend, goto, if, inline, mutable, namespace, new, noexcept, nullptr, operator, private, protected, public, register, reinterpret_cast, return, sizeof, static, static_assert, static_cast, struct, switch, template, this, throw, true, try, typedef, typeid, typename, union, using, virtual, void, volatile, wchar_t, while},
+    keywordstyle=\color{keyword_bright},
+    morekeywords=[2]{int, short, long, long long, signed, unsigned, char, wchar_t, char16_t, char32_t, bool, float, double, long double, void, nullptr_t, Type&, Type*, Type[], struct, class, union, enum, typedef, decltype},
+    keywordstyle={[2]\itshape\color{datatype_bright}},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+}
+
+% apply settings to all listings
+\lstset{
+    % frame=tb,
+    aboveskip=0mm,
+    belowskip=0mm,
+    showstringspaces=true,
+    columns=flexible,
+    breaklines=false,
+    breakatwhitespace=true,
+}

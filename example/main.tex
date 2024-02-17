@@ -1,4 +1,4 @@
-% Define all the needed variable like it is shown in the var.tex.example 
+% Define all the needed variable like it is shown in the var.tex.example
 % (Just copy the var.tex.example file and remove the ".example" from the filename.)
 \input{var.tex}
 
@@ -74,17 +74,17 @@
     \subsubsection{Second level of mini TOC}
     \paragraph{Third level of mini TOC}
     
-    % TODO: Add code examples
-    \subsection{Code}
+    \section{Code}
     \textbf{Inline code formatting} can be achieved by using \textbackslash{code}\{\} for regular sized code
     and \textbackslash{fncode}\{\} for footnote sized code.\newline
-    Regular size: \code{this is some inline code},\newline 
-    Footnote sized: \fncode{this is smaller code}.\vspace*{4pt}
-    
+    Regular size: \code{this is some inline code},\newline
+    Footnote sized: \fncode{this is smaller code}.
+    \newpar{}
     To achieve \textbf{formatted code blocks}, use \newline
-    \textbackslash{begin}\{lstlisting\}[style=bright\_C++]\newline 
+    \textbackslash{begin}\{lstlisting\}[style=bright\_C++]\newline
     \code{Code Block}\newline
-    \textbackslash{end}\{lstlisting\}\vspace*{4pt}
+    \textbackslash{end}\{lstlisting\}
+    
     \begin{lstlisting}[style=bright_C++]
 #include <algorithm>
 std::vector<int> unsorted;
@@ -98,9 +98,10 @@ std::sort(  unsorted_custom.begin(),
             [](auto fp1, auto fp2){
                 return fp1->handle <fp2->handle;
             });
-    \end{lstlisting}
-    Currently, custom code coloring is only implemented for C++, for python etc. use the default style.\\
+\end{lstlisting}
     
+    Currently, custom code coloring is only implemented for C++, for python etc.\ use the default style.
+    \newpar{}
     \textbf{Remark} inside the listing, the absolute number of tabs is used.
     
     \newcol{}

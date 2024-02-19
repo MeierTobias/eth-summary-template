@@ -23,4 +23,6 @@
         "-e16",
         "-q"
     ],
+    // use lualatex for better font handling
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
 }

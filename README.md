@@ -34,6 +34,12 @@ This adds the template repo to the folder `src/template`
 > **_Remember:_** If you later want to clone your repository to another machine you need to add the `--recurse-submodules` flag to your clone command to pull the submodules. `git clone --recurse-submodules https://github.com/your/repository.git`
 
 ### LaTeX setup
+! **Important** 
+Make sure to compile with xelatex (required by fontspec). When using *latex-workshop* in VSCode add this line to your `settings.json` file:
+
+```
+"latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+```
 
 Navigate to the subfolder that contains this repository `src/template` there you find a folder called `example`. Copy the two files `main.tex` and `var.tex` to the `src` folder. This can also be done by executing the following command:
 

@@ -33,7 +33,7 @@ jobs:
       - name: build latex pdf (portrait/with examples)
         uses: docker://texlive/texlive:latest
         with:
-          args: latexmk --xelatex -pdf -cd -interaction=nonstopmode -file-line-error -jobname=main -outdir=../build ./example/main.tex
+          args: latexmk -xelatex -cd -interaction=nonstopmode -file-line-error -jobname=main -outdir=../build ./example/main.tex
       - name: Copy output
         run: cp ./build/main.pdf ./pages/main.pdf
       - name: Setup Pages

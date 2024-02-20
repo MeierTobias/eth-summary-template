@@ -132,15 +132,15 @@
     \PackageError{examplesection}{Can't place an examplesection here}{Create a section first.}
   \else
     \ifnum\value{subsection}=0
-      \subsection{#1}
+      \subsection[exampleColor]{#1}
     \else
       \ifnum\value{subsubsection}=0
-        \subsubsection{#1}
+        \subsubsection[exampleColor]{#1}
       \else
         \ifnum\value{paragraph}=0
-          \paragraph{#1}
+          \paragraph[exampleColor]{#1}
         \else
-          \subparagraph{#1}
+          \subparagraph[exampleColor]{#1}
         \fi
       \fi
     \fi

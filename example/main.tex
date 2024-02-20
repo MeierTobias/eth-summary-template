@@ -19,12 +19,13 @@
     
     % These are some example sections
     \section{Section}
-    You can structure your summary with the following four section types.
+    You can structure your summary with the following five section types.
     \begin{itemize}
         \item \texttt{\symbol{92}section}
         \item \texttt{\symbol{92}subsection}
         \item \texttt{\symbol{92}subsubsection}
         \item \texttt{\symbol{92}paragraph}
+        \item \texttt{\symbol{92}subparagraph}
     \end{itemize}
     
     \subsection{Sub-Section}
@@ -34,7 +35,10 @@
     This is a sub-sub-section.
     
     \paragraph{Paragraph}
-    And this is a paragraph.
+    This is a paragraph.
+    
+    \subparagraph{Sub-Paragraph}
+    And this is a sub-paragraph.
     
     \section{Math examples}
     
@@ -74,6 +78,17 @@
     \subsubsection{Second level of mini TOC}
     \paragraph{Third level of mini TOC}
     
+    \section{Examples}
+    To add an example you can use the \texttt{examplesection} environment.
+    \begin{examplesection}[Example title]
+        Here is your example.
+    \end{examplesection}
+    
+    \newcol{}
+    
+    \section{Section in next column}
+    This section is in a new column.
+        
     \section{Code}
     \textbf{Inline code formatting} can be achieved by using \textbackslash{code}\{\} for regular sized code
     and \textbackslash{fncode}\{\} for footnote sized code.\newline
@@ -103,10 +118,6 @@ std::sort(  unsorted_custom.begin(),
     Currently, custom code coloring is only implemented for C++, for python etc.\ use the default style.
     \newpar{}
     \textbf{Remark} inside the listing, the absolute number of tabs is used.
-    
-    \newcol{}
-    
-    \section{Section in next column}
     
     % ---------------------------------------------------------------
     %                     your content ends here

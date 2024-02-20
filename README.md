@@ -59,6 +59,9 @@ Open the newly copied `var.tex` file in your `src` directory and adjust the para
 
 Now you are ready to compile the main.tex file and start working on your summary.
 
+> **Important**
+Make sure to compile with xelatex (required by fontspec).
+
 We recommend to read the [style guide](https://meiertobias.github.io/eth-summarytemplate3/main.pdf) and follow these guidelines whenever possible.
 
 ### VS Code setup

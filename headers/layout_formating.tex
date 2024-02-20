@@ -2,7 +2,7 @@
 \usepackage{color,xcolor}
 \definecolor{sectionColor}{HTML}{15836c}  % 1c59c9
 \definecolor{subSectionColor}{HTML}{1c59c9} % 568ae8
-\definecolor{subSubsectionColor}{HTML}{568ae8} % 87a9e8
+\definecolor{subSubSectionColor}{HTML}{568ae8} % 87a9e8
 \definecolor{paragraphColor}{HTML}{87a9e8} % 87a9e8
 \definecolor{subParagraphColor}{HTML}{87a9e8} % 87a9e8
 \definecolor{exampleColor}{HTML}{c3c2c5}
@@ -48,7 +48,7 @@
 \usepackage{titletoc}
 
 % creates a custom title background 
-\newcommand{\customtitlebackground}[3]{\begin{tcolorbox}[
+\newcommand{\customtitlebackground}[4]{\begin{tcolorbox}[
       enhanced,
       boxrule=0pt,
       arc=0pt,
@@ -59,38 +59,62 @@
       bottom=0pt,
       nobeforeafter,
       interior code={\fill[overlay,#1] (frame.north west) rectangle (frame.south east);},
-    ]\textcolor{#2}{#3\hspace{0.5em}#1}
+    ]\textcolor{#2}{#3\hspace{0.5em}#4}
   \end{tcolorbox}}
-
-% update section title
+  
+% Update section title (same for all section levels)
+% This creates a title with colored box at the background
+% The default colors are specified at the top of this file
+% The new \section command also accepts an optional color parameter to use a custom background color.
+% \section[customColor]{Section name}
+% More in detail:
+% The middle part (\titleformat and \titlespacing) defines the layout. The \backgroundcolor command
+% is used as a placeholder for later. The renewcommand at the bottom adds the functionality to
+% accept an optional color parameter.
+\newcommand\backgroundcolor{}
 \titleformat{\section}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{sectionColor}{titleTextColor}{\thesection}}[{\startcontents[section]}]
+{\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesection}{#1}}[{\startcontents[section]}]
 \titlespacing{\section}{0pt}{1pt}{0pt}
+% set background color as an optional parameter
+\let\oldsection\section
+\renewcommand\section[2][sectionColor]{\edef\backgroundcolor{#1}\oldsection{#2}}
 
 % update subsection title
 \titleformat{\subsection}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{subSectionColor}{titleTextColor}{\thesubsection}}
+{\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesubsection}{#1}}
 \titlespacing{\subsection}{0pt}{1pt}{0pt}
+% set background color as an optional parameter
+\let\oldsubsection\subsection
+\renewcommand\subsection[2][subSectionColor]{\edef\backgroundcolor{#1}\oldsubsection{#2}}
 
 % update subsubsection title
 \titleformat{\subsubsection}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{subSubsectionColor}{titleTextColor}{\thesubsubsection}}
+{\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesubsubsection}{#1}}
 \titlespacing{\subsubsection}{0pt}{1pt}{0pt}
+% set background color as an optional parameter
+\let\oldsubsubsection\subsubsection
+\renewcommand\subsubsection[2][subSubSectionColor]{\edef\backgroundcolor{#1}\oldsubsubsection{#2}}
 
 % update paragraph title
 \titleformat{\paragraph}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{paragraphColor}{titleTextColor}{\theparagraph}}
+{\customtitlebackground{paragraphColor}{titleTextColor}{\theparagraph}{#1}}
 \titlespacing{\paragraph}{0pt}{1pt}{0pt}
+% set background color as an optional parameter
+\let\oldparagraph\paragraph
+\renewcommand\paragraph[2][paragraphColor]{\edef\backgroundcolor{#1}\oldparagraph{#2}}
 
 % update subparagraph title
 \titleformat{\subparagraph}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{subParagraphColor}{titleTextColor}{\thesubparagraph}}
+{\customtitlebackground{subParagraphColor}{titleTextColor}{\thesubparagraph}{#1}}
 \titlespacing{\subparagraph}{0pt}{1pt}{0pt}
+% set background color as an optional parameter
+\let\oldsubparagraph\subparagraph
+\renewcommand\subparagraph[2][subParagraphColor]{\edef\backgroundcolor{#1}\oldsubparagraph{#2}}
 
 % Create a TOC for the current section
 \newcommand{\createsectiontoc}{

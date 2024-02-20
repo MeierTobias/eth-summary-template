@@ -10,6 +10,7 @@ Topics documented in this ReadMe:
 
 - [How to use this template](#how-to-use-this-template)
   - [Include this repo as a submodule](#include-this-repo-as-a-submodule)
+  - [LaTeX setup](#latex-setup)
   - [VS Code setup](#vs-code-setup)
     - [LaTeX checker ChkTeX](#latex-checker-chktex)
 - [Contributing](#contributing)
@@ -31,6 +32,8 @@ git submodule add https://github.com/MeierTobias/eth-summary-template.git src/te
 This adds the template repo to the folder `src/template`
 
 > **_Remember:_** If you later want to clone your repository to another machine you need to add the `--recurse-submodules` flag to your clone command to pull the submodules. `git clone --recurse-submodules https://github.com/your/repository.git`
+
+### LaTeX setup
 
 Navigate to the subfolder that contains this repository `src/template` there you find a folder called `example`. Copy the two files `main.tex` and `var.tex` to the `src` folder. This can also be done by executing the following command:
 

@@ -47,11 +47,8 @@
 \usepackage[explicit]{titlesec}
 \usepackage{titletoc}
 
-\titleformat{\section}
-{\normalfont\bfseries\fontfamily{lmss}\selectfont}
-{}
-{0pt}
-{\begin{tcolorbox}[
+% creates a custom title background 
+\newcommand{\customtitlebackground}[3]{\begin{tcolorbox}[
       enhanced,
       boxrule=0pt,
       arc=0pt,
@@ -61,85 +58,38 @@
       top=0pt,
       bottom=0pt,
       nobeforeafter,
-      interior code={\fill[overlay,sectionColor] (frame.north west) rectangle (frame.south east);},
-    ]\textcolor{titleTextColor}{\thesection\hspace{0.5em}#1}
-  \end{tcolorbox}}[{\startcontents[section]}]
+      interior code={\fill[overlay,#1] (frame.north west) rectangle (frame.south east);},
+    ]\textcolor{#2}{#3\hspace{0.5em}#1}
+  \end{tcolorbox}}
+
+% update section title
+\titleformat{\section}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
+{\customtitlebackground{sectionColor}{titleTextColor}{\thesection}}[{\startcontents[section]}]
 \titlespacing{\section}{0pt}{1pt}{0pt}
 
+% update subsection title
 \titleformat{\subsection}
-{\normalfont\bfseries\fontfamily{lmss}\selectfont}
-{}
-{0pt}
-{\begin{tcolorbox}[
-      enhanced,
-      boxrule=0pt,
-      arc=0pt,
-      outer arc=0pt,
-      left=0pt,
-      right=0pt,
-      top=0pt,
-      bottom=0pt,
-      nobeforeafter,
-      interior code={\fill[overlay,subSectionColor] (frame.north west) rectangle (frame.south east);},
-    ]\textcolor{titleTextColor}{\thesubsection\hspace{0.5em}#1}
-  \end{tcolorbox}}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
+{\customtitlebackground{subSectionColor}{titleTextColor}{\thesubsection}}
 \titlespacing{\subsection}{0pt}{1pt}{0pt}
 
+% update subsubsection title
 \titleformat{\subsubsection}
-{\normalfont\bfseries\fontfamily{lmss}\selectfont}
-{}
-{0pt}
-{\begin{tcolorbox}[
-      enhanced,
-      boxrule=0pt,
-      arc=0pt,
-      outer arc=0pt,
-      left=0pt,
-      right=0pt,
-      top=0pt,
-      bottom=0pt,
-      nobeforeafter,
-      interior code={\fill[overlay,subSubsectionColor] (frame.north west) rectangle (frame.south east);},
-    ]\textcolor{titleTextColor}{\thesubsubsection\hspace{0.5em}#1}
-  \end{tcolorbox}}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
+{\customtitlebackground{subSubsectionColor}{titleTextColor}{\thesubsubsection}}
 \titlespacing{\subsubsection}{0pt}{1pt}{0pt}
 
+% update paragraph title
 \titleformat{\paragraph}
-{\normalfont\bfseries\fontfamily{lmss}\selectfont}
-{}
-{0pt}
-{\begin{tcolorbox}[
-      enhanced,
-      boxrule=0pt,
-      arc=0pt,
-      outer arc=0pt,
-      left=0pt,
-      right=0pt,
-      top=0pt,
-      bottom=0pt,
-      nobeforeafter,
-      interior code={\fill[overlay,paragraphColor] (frame.north west) rectangle (frame.south east);},
-    ]\textcolor{titleTextColor}{\theparagraph\hspace{0.5em}#1}
-  \end{tcolorbox}}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
+{\customtitlebackground{paragraphColor}{titleTextColor}{\theparagraph}}
 \titlespacing{\paragraph}{0pt}{1pt}{0pt}
 
+% update subparagraph title
 \titleformat{\subparagraph}
-{\normalfont\bfseries\fontfamily{lmss}\selectfont}
-{}
-{0pt}
-{\begin{tcolorbox}[
-      enhanced,
-      boxrule=0pt,
-      arc=0pt,
-      outer arc=0pt,
-      left=0pt,
-      right=0pt,
-      top=0pt,
-      bottom=0pt,
-      nobeforeafter,
-      interior code={\fill[overlay,subParagraphColor] (frame.north west) rectangle (frame.south east);},
-    ]\textcolor{titleTextColor}{\thesubparagraph\hspace{0.5em}#1}
-  \end{tcolorbox}}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
+{\customtitlebackground{subParagraphColor}{titleTextColor}{\thesubparagraph}}
 \titlespacing{\subparagraph}{0pt}{1pt}{0pt}
 
 % Create a TOC for the current section

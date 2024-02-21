@@ -4,10 +4,8 @@
 \definecolor{subSectionColor}{HTML}{1c59c9} % 568ae8
 \definecolor{subSubSectionColor}{HTML}{568ae8} % 87a9e8
 \definecolor{paragraphColor}{HTML}{87a9e8} % 87a9e8
-\definecolor{subParagraphColor}{HTML}{ffffff} % 87a9e8
 \definecolor{exampleColor}{HTML}{c3c2c5}
-\definecolor{titleTextColorLight}{HTML}{ffffff}
-\definecolor{titleTextColorDark}{HTML}{000000}
+\definecolor{titleTextColor}{HTML}{ffffff}
 
 % multicol settings
 \setlength{\premulticols}{1pt}
@@ -75,7 +73,7 @@
 \newcommand\backgroundcolor{}
 \titleformat{\section}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{\backgroundcolor}{titleTextColorLight}{\thesection}{#1}}[{\startcontents[section]}]
+{\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesection}{#1}}[{\startcontents[section]}]
 \titlespacing{\section}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldsection\section
@@ -84,7 +82,7 @@
 % update subsection title
 \titleformat{\subsection}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{\backgroundcolor}{titleTextColorLight}{\thesubsection}{#1}}
+{\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesubsection}{#1}}
 \titlespacing{\subsection}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldsubsection\subsection
@@ -93,7 +91,7 @@
 % update subsubsection title
 \titleformat{\subsubsection}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{\backgroundcolor}{titleTextColorLight}{\thesubsubsection}{#1}}
+{\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesubsubsection}{#1}}
 \titlespacing{\subsubsection}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldsubsubsection\subsubsection
@@ -102,7 +100,7 @@
 % update paragraph title
 \titleformat{\paragraph}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{paragraphColor}{titleTextColorLight}{\theparagraph}{#1}}
+{\customtitlebackground{paragraphColor}{titleTextColor}{\theparagraph}{#1}}
 \titlespacing{\paragraph}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldparagraph\paragraph

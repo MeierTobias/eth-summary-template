@@ -9,14 +9,14 @@
 
 \begin{document}
 \begin{multicols*}{3}
-    
+
     % create the title section
     \input{\templatePath/summary_title.tex} % ChkTex 27
-    
+
     % ---------------------------------------------------------------
     %                     your content goes here
     % ---------------------------------------------------------------
-    
+
     % These are some example sections
     \section{Section}
     You can structure your summary with the following five section types.
@@ -25,70 +25,70 @@
         \item \texttt{\symbol{92}subsection}
         \item \texttt{\symbol{92}subsubsection}
         \item \texttt{\symbol{92}paragraph}
-        \item \texttt{\symbol{92}subparagraph}
+        \item \texttt{\symbol{92}ptitle}
     \end{itemize}
-    
+
     \subsection{Sub-Section}
     This is a sub-section.
-    
+
     \subsubsection{Sub-Sub-Section}
     This is a sub-sub-section.
-    
+
     \paragraph{Paragraph}
     This is a paragraph.
-    
-    \subparagraph{Sub-Paragraph}
-    And this is a sub-paragraph.
-    
+
+    \ptitle{Paragraph Title}
+    And this is a paragraph title.
+
     \section{Math examples}
-    
+
     Use either \texttt{equation}, \texttt{align} or \texttt{gather} to
     state mathematical formulations.
-    
+
     \subsection{Single equation}
     The \textit{D'Alembert} solution for a 1D Wave-PDE is given by:
     \begin{equation*}
         u(x,t)=\frac{1}{2}\left[f(x+ct)+f(x-ct)\right]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(s)ds
     \end{equation*}
-    
+
     \subsection{Multiline equation}
     Simple multiline equation can be written with the \texttt{gather} environment.
-    
+
     \begin{gather*}
         u(x,t) =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2 A(t)} \\
         A(t)=\int a(s)\;ds
     \end{gather*}
-    
+
     To get aligned equations sue the \texttt{align} environment.
     \begin{align*}
         u(t-a)       \; & \laplace\; \frac{1}{s}e^{-as} \\
         f(t-a)u(t-a) \; & \laplace\; e^{-as}F(s)
     \end{align*}
-    
+
     \textbf{Hint:} \LaTeX{} is very strict about equations at the beginning of a section.
     If you add an \texttt{align} environment at the start of an section use the
     \textbackslash{}\texttt{noindent} command before the equation to suppress the unnecessary
     line break.
-    
+
     \section{Section TOC}
     This template provides a command to generate a section specific table of content.
     \createsectiontoc{}
-    
+
     \subsection{First level of mini TOC}
     \subsubsection{Second level of mini TOC}
     \paragraph{Third level of mini TOC}
-    
+
     \section{Examples}
     To add an example you can use the \texttt{examplesection} environment.
     \begin{examplesection}[Example title]
         Here is your example.
     \end{examplesection}
-    
+
     \newcol{}
-    
+
     \section{Section in next column}
     This section is in a new column.
-        
+
     \section{Code}
     \textbf{Inline code formatting} can be achieved by using \textbackslash{code}\{\} for regular sized code
     and \textbackslash{fncode}\{\} for footnote sized code.\newline
@@ -99,7 +99,7 @@
     \textbackslash{begin}\{lstlisting\}[style=bright\_C++]\newline
     \code{Code Block}\newline
     \textbackslash{end}\{lstlisting\}
-    
+
     \begin{lstlisting}[style=bright_C++]
 #include <algorithm>
 std::vector<int> unsorted;
@@ -114,14 +114,27 @@ std::sort(  unsorted_custom.begin(),
                 return fp1->handle <fp2->handle;
             });
 \end{lstlisting}
-    
+
     Currently, custom code coloring is only implemented for C++, for python etc.\ use the default style.
     \newpar{}
     \textbf{Remark} inside the listing, the absolute number of tabs is used.
-    
+
+    \section{Lists and Enumerations}
+    \begin{itemize}
+        \item Lists can be used to list things
+              \begin{enumerate}
+                  \item first
+                  \item second
+              \end{enumerate}
+        \item Change indent with option \code{[leftmargin = 40pt]}
+        \begin{enumerate}[leftmargin=40pt]
+            \item enumerate with larger indent
+        \end{enumerate}
+    \end{itemize}
+
     % ---------------------------------------------------------------
     %                     your content ends here
     % ---------------------------------------------------------------
-    
+
 \end{multicols*}
 \end{document}

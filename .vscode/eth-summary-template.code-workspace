@@ -7,6 +7,7 @@
 	"settings": {
 		// LaTeX output directory
 		"latex-workshop.latex.outDir": "../build",
+		
 		//ChkTeX linting
 		"latex-workshop.linting.chktex.enabled": true,
 		"latex-workshop.linting.chktex.exec.args": [
@@ -21,10 +22,64 @@
 			"-e16",
 			"-q",
 		],
+		
 		// Intellisense
 		"latex-workshop.intellisense.package.enabled": true,
-
+		
+		// Developement tools and recipes setup
+		"latex-workshop.latex.tools": [
+			{
+				"name": "xelatexmk",
+				"command": "latexmk",
+				"args": [
+					"-synctex=1",
+					"-interaction=nonstopmode",
+					"-file-line-error",
+					"-xelatex",
+					"-outdir=%OUTDIR%",
+					"%DOC%"
+				],
+				"env": {}
+			},
+			{
+				"name": "changetemplatepath",
+				"command": "./dev_setup.sh",
+				"args": [
+					"template",
+					".."
+				],
+				"env": {}
+			},
+			{
+				"name": "reverttemplatepath",
+				"command": "./dev_setup.sh",
+				"args": [
+					"..",
+					"template"
+				],
+				"env": {}
+			},
+		],
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "latexmk (xelatex) template",
+				"tools": [
+					"changetemplatepath",
+					"xelatexmk",
+					"reverttemplatepath",
+				]
+			},
+			{
+				"name": "latexmk (xelatex)",
+				"tools": [
+					"xelatexmk",
+				]
+			}
+		],
+		
 		// use lualatex for better font handling
-		"latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template"
+		// without auto path correction
+		// "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
 	}
 }

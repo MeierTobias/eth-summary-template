@@ -1,12 +1,11 @@
 % colors
 \usepackage{color,xcolor}
-\definecolor{sectionColor}{HTML}{15836c}  % 1c59c9
+\definecolor{sectionColor}{HTML}{6404c9}%{15836c}  % 1c59c9
 \definecolor{subSectionColor}{HTML}{1c59c9} % 568ae8
 \definecolor{subSubSectionColor}{HTML}{568ae8} % 87a9e8
 \definecolor{paragraphColor}{HTML}{87a9e8} % 87a9e8
-\definecolor{subParagraphColor}{HTML}{87a9e8} % 87a9e8
 \definecolor{exampleColor}{HTML}{c3c2c5}
-\definecolor{titleTextColor}{RGB}{255,255,255}
+\definecolor{titleTextColor}{HTML}{ffffff}
 
 % multicol settings
 \setlength{\premulticols}{1pt}
@@ -108,13 +107,15 @@
 \renewcommand\paragraph[2][paragraphColor]{\edef\backgroundcolor{#1}\oldparagraph{#2}}
 
 % update subparagraph title
-\titleformat{\subparagraph}
-{\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
-{\customtitlebackground{subParagraphColor}{titleTextColor}{\thesubparagraph}{#1}}
-\titlespacing{\subparagraph}{0pt}{1pt}{0pt}
-% set background color as an optional parameter
-\let\oldsubparagraph\subparagraph
-\renewcommand\subparagraph[2][subParagraphColor]{\edef\backgroundcolor{#1}\oldsubparagraph{#2}}
+% \titleformat{\subparagraph}
+% {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
+% {\customtitlebackground{subParagraphColor}{titleTextColorDark}{\thesubparagraph}{#1}}
+% \titlespacing{\subparagraph}{0pt}{1pt}{0pt}
+% % set background color as an optional parameter
+% \let\oldsubparagraph\subparagraph
+% \renewcommand\subparagraph[2][subParagraphColor]{\edef\backgroundcolor{#1}\oldsubparagraph{#2}}
+
+\newcommand{\ptitle}[1]{{\normalfont\bfseries\fontfamily{lmss}\selectfont#1\newline}}
 
 % Create a TOC for the current section
 \newcommand{\createsectiontoc}{

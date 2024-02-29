@@ -136,20 +136,24 @@ std::sort(  unsorted_custom.begin(),
     \section{Table}
     To create aesthetically pleasing tables, \code{tabularx} and \code{booktabs} can be used:
     \newpar{}
+
     \renewcommand{\arraystretch}{1.3}
-    \setlength\tabcolsep{6pt} % default value: 6pt
+    \setlength{\oldtabcolsep}{\tabcolsep}\setlength\tabcolsep{3pt}
+
     \begin{tabularx}{\linewidth}{@{}llcp{0.4\linewidth}@{}}
         \toprule
-                                                                & \multicolumn{3}{c}{Multicolumn}                                                                                        \\
+                                                                & \multicolumn{3}{c}{Multicolumn}                                                 \\
         \cmidrule{2-4}
-        \multirow{2}{*}{\begin{sideways}Multirow\end{sideways}} & left aligned                    & centered & paragraph with automatic linebreak    \\
+        \multirow{2}{*}{\begin{sideways}Multirow\end{sideways}} & left aligned                    & centered & paragraph with automatic linebreak \\
         \cmidrule{2-4}
         \morecmidrules\cmidrule{2-4}
-        &                                 &          & custom new\newline lines                                                                         \\
+                                                                &                                 &          & custom new\newline lines           \\
         \bottomrule
     \end{tabularx}
+
     \renewcommand{\arraystretch}{1}
-    \setlength\tabcolsep{6pt} % default value: 6pt
+    \setlength{\tabcolsep}{\oldtabcolsep}
+
     \textbf{Remark:} When using table, try to reduce the number of horizontal lines and avoid vertical lines at all.
     Most of the time the alignment of columns and rows is more than sufficient.
 

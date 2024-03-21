@@ -84,7 +84,7 @@
 		
 		// use lualatex for better font handling
 		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template"
-		// without auto path correction (use if on Windows)
+		// without auto path correction
 		// "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
 	}
 }

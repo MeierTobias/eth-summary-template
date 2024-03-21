@@ -1,0 +1,90 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		// rebuild the pdf on save
+		"latex-workshop.latex.autoBuild.run": "onSave",
+
+		// LaTeX output directory
+		"latex-workshop.latex.outDir": "../build",
+		
+		//ChkTeX linting
+		"latex-workshop.linting.chktex.enabled": true,
+		"latex-workshop.linting.chktex.exec.args": [
+			"-wall",
+			"-n8",
+			"-n13",
+			"-n21",
+			"-n22",
+			"-n30",
+			"-n36",
+			"-n46",
+			"-e16",
+			"-q",
+		],
+		
+		// Intellisense
+		"latex-workshop.intellisense.package.enabled": true,
+		
+		// Developement tools and recipes setup
+		"latex-workshop.latex.tools": [
+			{
+				"name": "xelatexmk",
+				"command": "latexmk",
+				"args": [
+					"-synctex=1",
+					"-interaction=nonstopmode",
+					"-file-line-error",
+					"-xelatex",
+					"-outdir=%OUTDIR%",
+					"%DOC%"
+				],
+				"env": {}
+			},
+			{
+				"name": "changetemplatepath",
+				"command": "bash",
+				"args": [
+					"../dev_setup.sh",
+					"template",
+					".."
+				],
+				"env": {}
+			},
+			{
+				"name": "reverttemplatepath",
+				"command": "bash",
+				"args": [
+					"../dev_setup.sh",
+					"..",
+					"template"
+				],
+				"env": {}
+			},
+		],
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "latexmk (xelatex) template",
+				"tools": [
+					"changetemplatepath",
+					"xelatexmk",
+					"reverttemplatepath",
+				]
+			},
+			{
+				"name": "latexmk (xelatex)",
+				"tools": [
+					"xelatexmk",
+				]
+			}
+		],
+		
+		// use lualatex for better font handling
+		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template"
+		// without auto path correction (use if on Windows)
+		// "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+	}
+}

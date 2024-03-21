@@ -60,7 +60,7 @@
       interior code={\fill[overlay,#1] (frame.north west) rectangle (frame.south east);},
     ]\textcolor{#2}{#3\hspace{0.5em}#4}
   \end{tcolorbox}}
-  
+
 % Update section title (same for all section levels)
 % This creates a title with colored box at the background
 % The default colors are specified at the top of this file
@@ -77,7 +77,9 @@
 \titlespacing{\section}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldsection\section
-\renewcommand\section[2][sectionColor]{\edef\backgroundcolor{#1}\oldsection{#2}}
+\RenewDocumentCommand{\section}{ o O{sectionColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
+{\oldsection{#3}}%
+{\if\relax\detokenize{#1}\relax \oldsection{#3}\else \oldsection[#1]{#3}\fi}}
 
 % update subsection title
 \titleformat{\subsection}
@@ -86,7 +88,9 @@
 \titlespacing{\subsection}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldsubsection\subsection
-\renewcommand\subsection[2][subSectionColor]{\edef\backgroundcolor{#1}\oldsubsection{#2}}
+\RenewDocumentCommand{\subsection}{ o O{subSectionColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
+{\oldsubsection{#3}}%
+{\if\relax\detokenize{#1}\relax \oldsubsection{#3}\else \oldsubsection[#1]{#3}\fi}}
 
 % update subsubsection title
 \titleformat{\subsubsection}
@@ -95,7 +99,9 @@
 \titlespacing{\subsubsection}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldsubsubsection\subsubsection
-\renewcommand\subsubsection[2][subSubSectionColor]{\edef\backgroundcolor{#1}\oldsubsubsection{#2}}
+\RenewDocumentCommand{\subsubsection}{ o O{subSubSectionColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
+{\oldsubsubsection{#3}}%
+{\if\relax\detokenize{#1}\relax \oldsubsubsection{#3}\else \oldsubsubsection[#1]{#3}\fi}}
 
 % update paragraph title
 \titleformat{\paragraph}
@@ -104,7 +110,9 @@
 \titlespacing{\paragraph}{0pt}{1pt}{0pt}
 % set background color as an optional parameter
 \let\oldparagraph\paragraph
-\renewcommand\paragraph[2][paragraphColor]{\edef\backgroundcolor{#1}\oldparagraph{#2}}
+\RenewDocumentCommand{\paragraph}{ o O{paragraphColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
+{\oldparagraph{#3}}%
+{\if\relax\detokenize{#1}\relax \oldparagraph{#3}\else \oldparagraph[#1]{#3}\fi}}
 
 % update subparagraph title
 % \titleformat{\subparagraph}
@@ -113,7 +121,9 @@
 % \titlespacing{\subparagraph}{0pt}{1pt}{0pt}
 % % set background color as an optional parameter
 % \let\oldsubparagraph\subparagraph
-% \renewcommand\subparagraph[2][subParagraphColor]{\edef\backgroundcolor{#1}\oldsubparagraph{#2}}
+% \RenewDocumentCommand{\subparagraph}{ o O{subparagraphColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
+% {\oldsubparagraph{#3}}%
+% {\if\relax\detokenize{#1}\relax \oldsubparagraph{#3}\else \oldsubparagraph[#1]{#3}\fi}}
 
 \newcommand{\ptitle}[1]{{\normalfont\bfseries\fontfamily{lmss}\selectfont#1}}
 
@@ -133,15 +143,15 @@
     \PackageError{examplesection}{Can't place an examplesection here}{Create a section first.}
   \else
     \ifnum\value{subsection}=0
-      \subsection[exampleColor]{#1}
+      \subsection[][exampleColor]{#1}
     \else
       \ifnum\value{subsubsection}=0
-        \subsubsection[exampleColor]{#1}
+        \subsubsection[][exampleColor]{#1}
       \else
         \ifnum\value{paragraph}=0
-          \paragraph[exampleColor]{#1}
+          \paragraph[][exampleColor]{#1}
         \else
-          \subparagraph[exampleColor]{#1}
+          \subparagraph[][exampleColor]{#1}
         \fi
       \fi
     \fi

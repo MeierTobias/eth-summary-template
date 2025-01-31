@@ -1,0 +1,13 @@
+# ignore vs-code settings
+/.vscode/*
+!.vscode/settings.json.example
+!.vscode/eth-repo-name.code-workspace
+
+# ignore the latex build
+build/
+
+# ignore latexindent log
+src/indent.log
+
+# draw.io temp files
+*.drawio.bkp

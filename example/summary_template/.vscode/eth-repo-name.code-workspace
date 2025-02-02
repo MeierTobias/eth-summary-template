@@ -26,6 +26,9 @@
 		"latex-workshop.intellisense.package.enabled": true,
 
 		// use lualatex for better font handling
-		"latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+		"latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+
+		// use latex indent as formatter
+		"latex-workshop.formatting.latex": "latexindent"
 	}
 }

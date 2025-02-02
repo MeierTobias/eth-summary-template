@@ -83,8 +83,11 @@
 		],
 		
 		// use lualatex for better font handling
-		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template"
+		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template",
 		// without auto path correction
 		// "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+
+		// use latex indent as formatter
+		"latex-workshop.formatting.latex": "latexindent"
 	}
 }

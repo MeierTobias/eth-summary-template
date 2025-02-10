@@ -1,13 +1,13 @@
 # ETHZ ETHZ Summary Description
 
-![action status](https://github.com/meiertobias/eth-repo-name/actions/workflows/build_deploy.yml/badge.svg)
+![action status](https://github.com/user-name/eth-repo-name/actions/workflows/build_deploy.yml/badge.svg)
 
 This repository contains the LaTex source of the ETHZ Summary Description course summary.
 
 A pre-build pdf file can be downloaded here:
 
-- [eth-repo-name-full.pdf](https://meiertobias.github.io/eth-repo-name/main_full.pdf)
-- [eth-repo-name.pdf (without examples)](https://meiertobias.github.io/eth-repo-name/main.pdf)
+- [eth-repo-name-full.pdf](https://user-name.github.io/eth-repo-name/main_full.pdf)
+- [eth-repo-name.pdf (without examples)](https://user-name.github.io/eth-repo-name/main.pdf)
 
 ## Getting-Started
 

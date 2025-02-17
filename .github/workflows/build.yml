@@ -14,7 +14,7 @@ jobs:
         with:
           args: latexmk -xelatex -cd -interaction=nonstopmode -file-line-error -jobname=main -outdir=../build ./example/main.tex
       - name: Archive pdf's as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: compiled-pdf
           path: build/*.pdf

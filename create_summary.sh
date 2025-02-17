@@ -26,7 +26,4 @@ find $NEW_REL_PATH -type f -print0 | xargs -0 sed -i '' -e "s/summary-authors/$S
 echo "add template as submodule"
 cd $NEW_REL_PATH && git submodule add https://github.com/MeierTobias/eth-summary-template.git src/template
 
-unset LANG
-unset LC_CTYPE
-
 echo "all done"

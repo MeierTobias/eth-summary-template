@@ -5,8 +5,9 @@
 		}
 	],
 	"settings": {
-		// rebuild the pdf on save
+		// format and rebuild the pdf on save
 		"latex-workshop.latex.autoBuild.run": "onSave",
+		"editor.formatOnSave": true,
 
 		// LaTeX output directory
 		"latex-workshop.latex.outDir": "../build",

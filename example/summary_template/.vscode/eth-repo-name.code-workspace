@@ -5,8 +5,13 @@
 		}
 	],
 	"settings": {
+		// format and rebuild the pdf on save
+		"latex-workshop.latex.autoBuild.run": "onSave",
+		"editor.formatOnSave": true,
+
 		// LaTeX output directory
 		"latex-workshop.latex.outDir": "../build",
+
 		//ChkTeX linting
 		"latex-workshop.linting.chktex.enabled": true,
 		"latex-workshop.linting.chktex.exec.args": [
@@ -22,6 +27,7 @@
 			"-e16",
 			"-q",
 		],
+		
 		// Intellisense
 		"latex-workshop.intellisense.package.enabled": true,
 

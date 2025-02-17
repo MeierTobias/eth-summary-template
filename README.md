@@ -74,7 +74,7 @@ If you want to clone the whole template structure including the readme and CI co
 3. Clone your new repo to your local machine
 4. Clone this repo to your local machine
 5. Inside this repo
-   1. Open the `create_summary.sh`file and change the three variable at the beginning of the script to match your path and new repo name.
+   1. Open the `create_summary.sh`file and change the variables at the beginning of the script to match your path and new repo name.
    2. Run the `create_summary.sh` script
 6. Change the remaining details if needed in the var.tex file
 7. Commit and push the changes to your repo

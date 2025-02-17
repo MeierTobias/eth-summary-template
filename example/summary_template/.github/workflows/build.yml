@@ -1,0 +1,28 @@
+name: Build LaTex summary
+
+on: [pull_request]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          lfs: true
+      - name: build latex pdf (with examples)
+        uses: docker://texlive/texlive:latest
+        with:
+          args: latexmk -xelatex -cd -interaction=nonstopmode -file-line-error -jobname=main_full -outdir=../build ./src/main.tex
+      - name: change flags
+        run: sed '0,/{1}/s//{0}/' -i src/var.tex ;
+      - name: build latex pdf (without examples)
+        uses: docker://texlive/texlive:latest
+        with:
+          args: latexmk -xelatex -cd -interaction=nonstopmode -file-line-error -jobname=main -outdir=../build ./src/main.tex
+      - name: Archive pdf's as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdf
+          path: build/*.pdf
+          retention-days: 5

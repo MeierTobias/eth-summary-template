@@ -11,6 +11,7 @@ Topics documented in this ReadMe:
 - [How to use this template](#how-to-use-this-template)
   - [Include this repo as a submodule](#include-this-repo-as-a-submodule)
   - [LaTeX setup](#latex-setup)
+  - [Template structure cloning](#template-structure-cloning)
   - [VS Code setup](#vs-code-setup)
     - [LaTeX checker ChkTeX](#latex-checker-chktex)
 - [Contributing](#contributing)
@@ -19,7 +20,7 @@ Topics documented in this ReadMe:
 
 ## How to use this template
 
-If your summary is hosted on GitHub or GitLab the best way to use this template is by including it as a submodule. The next step describes how to achieve this. If you don't use a version control tool to manage your changes you can also just download this template and copy the files into the subfolder `src/template` in your summary directory. In this case you can skip the next step and proceed with the [LaTeX setup](#latex-setup).
+If your summary is hosted on GitHub or GitLab the best way to use this template is by including it as a submodule. The next step describes how to achieve this. If you don't use a version control tool to manage your changes you can also just download this template and copy the files into the subfolder `src/template` in your summary directory. In this case you can skip the next step and proceed with the [LaTeX setup](#latex-setup). There is also an option to [clone a preconfigured template structure](#template-structure-cloning) to setup an entire summery repo.
 
 ### Include this repo as a submodule
 
@@ -63,6 +64,20 @@ Now you are ready to compile the main.tex file and start working on your summary
 Make sure to compile with xelatex (required by fontspec).
 
 We recommend to read the [style guide](https://meiertobias.github.io/eth-summarytemplate3/main.pdf) and follow these guidelines whenever possible.
+
+### Template structure cloning
+
+If you want to clone the whole template structure including the readme and CI configurations you can follow theses steps:
+
+1. Create a new repo for your summary on GitHub
+2. Enable GitHub Pages by navigating to Settings -> Pages and then set the Build and Deployment Source to **GitHub Actions**
+3. Clone your new repo to your local machine
+4. Clone this repo to your local machine
+5. Inside this repo
+   1. Open the `create_summary.sh`file and change the variables at the beginning of the script to match your path and new repo name.
+   2. Run the `create_summary.sh` script
+6. Change the remaining details if needed in the var.tex file
+7. Commit and push the changes to your repo
 
 ### VS Code setup
 

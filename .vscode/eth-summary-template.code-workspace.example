@@ -5,8 +5,9 @@
 		}
 	],
 	"settings": {
-		// rebuild the pdf on save
+		// format and rebuild the pdf on save
 		"latex-workshop.latex.autoBuild.run": "onSave",
+		"editor.formatOnSave": true,
 
 		// LaTeX output directory
 		"latex-workshop.latex.outDir": "../build",
@@ -83,8 +84,11 @@
 		],
 		
 		// use lualatex for better font handling
-		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template"
+		"latex-workshop.latex.recipe.default": "latexmk (xelatex) template",
 		// without auto path correction
 		// "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+
+		// use latex indent as formatter
+		"latex-workshop.formatting.latex": "latexindent"
 	}
 }

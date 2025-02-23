@@ -12,7 +12,7 @@ cp -Ra ./example/summary_template/. $NEW_REL_PATH
 cp -Ra ./example/main.tex $NEW_REL_PATH/src
 
 echo "rename new repo"
-mv "$NEW_REL_PATH.vscode/eth-repo-name.code-workspace" "$NEW_REL_PATH.vscode/$NEW_REPO.code-workspace"
+mv "$NEW_REL_PATH.vscode/eth-repo-name.code-workspace.example" "$NEW_REL_PATH.vscode/$NEW_REPO.code-workspace"
 
 export LANG=C 
 export LC_CTYPE=C

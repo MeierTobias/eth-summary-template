@@ -2,6 +2,7 @@
 /.vscode/*
 !.vscode/settings.json.example
 !.vscode/eth-repo-name.code-workspace
+!.vscode/eth-repo-name.code-workspace.example
 
 # ignore the latex build
 build/

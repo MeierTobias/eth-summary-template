@@ -12,7 +12,7 @@ cp -Ra ./example/summary_template/. $NEW_REL_PATH
 cp -Ra ./example/main.tex $NEW_REL_PATH/src
 
 echo "rename new repo"
-mv "$NEW_REL_PATH.vscode/eth-repo-name.code-workspace" "$NEW_REL_PATH.vscode/$NEW_REPO.code-workspace"
+mv "$NEW_REL_PATH.vscode/eth-repo-name.code-workspace.example" "$NEW_REL_PATH.vscode/$NEW_REPO.code-workspace"
 
 export LANG=C 
 export LC_CTYPE=C
@@ -25,8 +25,5 @@ find $NEW_REL_PATH -type f -print0 | xargs -0 sed -i '' -e "s/summary-authors/$S
 
 echo "add template as submodule"
 cd $NEW_REL_PATH && git submodule add https://github.com/MeierTobias/eth-summary-template.git src/template
-
-unset LANG
-unset LC_CTYPE
 
 echo "all done"

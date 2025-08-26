@@ -16,12 +16,14 @@
 \def\columnseprulecolor{\color{lightgray}}
 
 % define header style
-% \usepackage[headsepline]{scrlayer-scrpage}
-% \pagestyle{scrheadings}
-% \ihead{\summaryTitle{} - \today}
-% \chead{\pagemark}
-% \ohead{\url{\repoURL}}
-% \setlength{\headsep}{0pt}
+\if 1\addheaderfooter
+  \usepackage[headsepline]{scrlayer-scrpage}
+  \pagestyle{scrheadings}
+  \ihead{\summaryTitle{} - \today}
+  \chead{\pagemark}
+  \ohead{\url{\repoURL}}
+  \setlength{\headsep}{0pt}
+\fi
 
 % hyperlinks have to be included last
 \usepackage{hyperref}

@@ -48,7 +48,18 @@
 \usepackage[explicit]{titlesec}
 \usepackage{titletoc}
 
-% creates a custom title background 
+% set title margins
+\if 1\tightlayout
+  \newcommand{\customtitletopmargin}{-1pt}
+  \newcommand{\customtitlebottommargin}{-1pt}
+  \newcommand{\customtitleaftermargin}{-3pt}
+\else
+  \newcommand{\customtitletopmargin}{0pt}
+  \newcommand{\customtitlebottommargin}{0pt}
+  \newcommand{\customtitleaftermargin}{0pt}
+\fi
+
+% creates a custom title background
 \newcommand{\customtitlebackground}[4]{\begin{tcolorbox}[
       enhanced,
       boxrule=0pt,
@@ -56,8 +67,8 @@
       outer arc=0pt,
       left=0pt,
       right=0pt,
-      top=-1pt,
-      bottom=-1pt,
+      top=\customtitletopmargin,
+      bottom=\customtitlebottommargin,
       nobeforeafter,
       interior code={\fill[overlay,#1] (frame.north west) rectangle (frame.south east);},
     ]\textcolor{#2}{#3\hspace{0.5em}#4}
@@ -76,7 +87,7 @@
 \titleformat{\section}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
 {\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesection}{#1}}[{\startcontents[section]}]
-\titlespacing{\section}{0pt}{1pt}{-3pt}
+\titlespacing{\section}{0pt}{1pt}{\customtitleaftermargin}
 % set background color as an optional parameter
 \let\oldsection\section
 \RenewDocumentCommand{\section}{ o O{sectionColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
@@ -87,7 +98,7 @@
 \titleformat{\subsection}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
 {\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesubsection}{#1}}
-\titlespacing{\subsection}{0pt}{1pt}{-3pt}
+\titlespacing{\subsection}{0pt}{1pt}{\customtitleaftermargin}
 % set background color as an optional parameter
 \let\oldsubsection\subsection
 \RenewDocumentCommand{\subsection}{ o O{subSectionColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
@@ -98,7 +109,7 @@
 \titleformat{\subsubsection}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
 {\customtitlebackground{\backgroundcolor}{titleTextColor}{\thesubsubsection}{#1}}
-\titlespacing{\subsubsection}{0pt}{1pt}{-3pt}
+\titlespacing{\subsubsection}{0pt}{1pt}{\customtitleaftermargin}
 % set background color as an optional parameter
 \let\oldsubsubsection\subsubsection
 \RenewDocumentCommand{\subsubsection}{ o O{subSubSectionColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%
@@ -109,7 +120,7 @@
 \titleformat{\paragraph}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}{}{0pt}
 {\customtitlebackground{paragraphColor}{titleTextColor}{\theparagraph}{#1}}
-\titlespacing{\paragraph}{0pt}{1pt}{-3pt}
+\titlespacing{\paragraph}{0pt}{1pt}{\customtitleaftermargin}
 % set background color as an optional parameter
 \let\oldparagraph\paragraph
 \RenewDocumentCommand{\paragraph}{ o O{paragraphColor} m}{\edef\backgroundcolor{#2}\IfNoValueTF{#1}%

@@ -1,9 +1,8 @@
 % Math packages
-\usepackage{amscd, amsmath, amstext, amssymb, mathtools, esint, polynom, trfsigns, pgfplots}
+\usepackage{amscd, amsmath, amstext, amssymb, mathtools, esint, polynom, trfsigns, pgfplots, bm, bbm}
 % Spec. version of pgfplots (rel. new version 2023)
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{backgrounds}
-\usepackage{bm}
 
 % Allow line break in align-environment
 \allowdisplaybreaks{}
@@ -18,3 +17,7 @@
 
 % define colors
 \definecolor{mathGreen}{RGB}{0, 120, 40}
+
+% argmin
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}

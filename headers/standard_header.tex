@@ -1,5 +1,16 @@
+% set document margins
+\if 1\addheaderfooter
+    % margins with header and footer
+    \newcommand{\customtopmargin}{20mm}
+    \newcommand{\custombottommargin}{0mm}
+\else
+    % margins without header and footer
+    \newcommand{\customtopmargin}{7mm}
+    \newcommand{\custombottommargin}{7mm}
+\fi
+
 % document setup
-\usepackage[left=7mm,right=7mm,top=20mm,bottom=0mm,\orientationmode,\papersize]{geometry}
+\usepackage[left=7mm,right=7mm,top=\customtopmargin,bottom=\custombottommargin,\orientationmode,\papersize]{geometry}
 \usepackage{multicol,multirow}
 \usepackage{inputenc}
 
